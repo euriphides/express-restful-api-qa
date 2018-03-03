@@ -7,14 +7,11 @@ var routes = require('./routes');
 var logger = require('morgan');
 
 app.use(logger("dev"));
-
 app.use(jsonParser());
-
-'use strict'
 
 var mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost:27017/sandbox");
+mongoose.connect("mongodb://localhost:27017/qa");
 
 var db = mongoose.connection;
 

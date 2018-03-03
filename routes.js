@@ -2,7 +2,7 @@
 
 var express = require('express');
 var router = express.Router();
-var Question = require("./models").Question;
+var Question = require('./models').Question;
 
 router.param("qID", function(req, res, next, id){
   Question.findById(id, function(err, doc) {
@@ -20,7 +20,7 @@ router.param("qID", function(req, res, next, id){
 router.param("aID", function(req, res, next, id){
   req.answer = req.question.answers.id(id);
   if(!req.answer) {
-    err = new Error("Not Found");
+    var err = new Error("Not Found");
     err.status = 404;
     return next(err);
   }
@@ -40,10 +40,10 @@ router.get('/', function(req, res, next){
 
 // POST /questions (already specified in app.js)
 // Route for creating questions
-router.post('/', function(req, res){
+router.post('/', function(req, res, next){
   var question = new Question(req.body);
   question.save(function(err, question){
-    if(err) return next(err);
+    if (err) return next(err);
     res.status(201);
     res.json(question);
   });
@@ -51,7 +51,7 @@ router.post('/', function(req, res){
 
 // GET /questions/:id
 // Return for specific questions
-router.get('/:qID', function(req, res, next){
+router.get('/:qID', function(req, res){
   res.json(req.question);
 });
 

@@ -49,4 +49,4 @@ QuestionSchema.pre("save", function(next){
 
 var Question = mongoose.model("Question", QuestionSchema);
 
-module.exports = Question;
+module.exports.Question = Question;
