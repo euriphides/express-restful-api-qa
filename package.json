@@ -1,0 +1,19 @@
+{
+  "name": "",
+  "version": "",
+  "description": "learning to create a RESTful API",
+  "main": "app.js",
+  "scripts": {
+    "test": "this is a test"
+  },
+  "keywords": [],
+  "author": "Patty Johnson",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.13.4",
+    "mongoose": "^5.0.8",
+    "morgan": "^1.7.0",
+    "npm": "^5.7.1"
+  }
+}
